@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Dropdown from "./components/Dropdown";
+import Translate from "./components/Translate";
 
 const items = [
   { title: "Who are you?", content: "Batman" },
@@ -20,7 +20,7 @@ export default () => {
     <div>
       {/* <Accordion items={items}></Accordion> */}
       {/* <Search></Search> */}
-      <button onClick={() => setShowDropdown(!showDropdown)}>
+      {/* <button onClick={() => setShowDropdown(!showDropdown)}>
         Toggle Dropdown
       </button>
       {showDropdown ? (
@@ -31,7 +31,8 @@ export default () => {
         ></Dropdown>
       ) : (
         ""
-      )}
+      )} */}
+      <Translate></Translate>
     </div>
   );
 };
