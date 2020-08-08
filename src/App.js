@@ -1,5 +1,5 @@
-import React from "react";
-import Search from "./components/Search";
+import React, { useState } from "react";
+import Dropdown from "./components/Dropdown";
 
 const items = [
   { title: "Who are you?", content: "Batman" },
@@ -7,11 +7,23 @@ const items = [
   { title: "Who is your nemesis?", content: "Joker" },
 ];
 
+const champions = [
+  { label: "I Am Batman", value: "batman" },
+  { label: "HahahahHAhHAHHAhA", value: "joker" },
+  { label: "I Will Destroy you", value: "bane" },
+];
+
 export default () => {
+  const [selectedChampion, selectChampion] = useState(champions[0]);
   return (
     <div>
       {/* <Accordion items={items}></Accordion> */}
-      <Search></Search>
+      {/* <Search></Search> */}
+      <Dropdown
+        options={champions}
+        selected={selectedChampion}
+        onSelectedChange={selectChampion}
+      ></Dropdown>
     </div>
   );
 };
