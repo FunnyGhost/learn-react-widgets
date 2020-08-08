@@ -15,15 +15,23 @@ const champions = [
 
 export default () => {
   const [selectedChampion, selectChampion] = useState(champions[0]);
+  const [showDropdown, setShowDropdown] = useState(true);
   return (
     <div>
       {/* <Accordion items={items}></Accordion> */}
       {/* <Search></Search> */}
-      <Dropdown
-        options={champions}
-        selected={selectedChampion}
-        onSelectedChange={selectChampion}
-      ></Dropdown>
+      <button onClick={() => setShowDropdown(!showDropdown)}>
+        Toggle Dropdown
+      </button>
+      {showDropdown ? (
+        <Dropdown
+          options={champions}
+          selected={selectedChampion}
+          onSelectedChange={selectChampion}
+        ></Dropdown>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
